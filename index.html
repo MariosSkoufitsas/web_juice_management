@@ -1,10 +1,134 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    
-  </body>
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login Example</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+
+
+
+
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button id="buttonn" onclick="logout()">Logout</button>
+    <table border=1 id="mytable1" >
+    <tr>
+    <td>ΟΝΟΜΑΤΕΠΩΝΥΜΟ</td>
+    <td>ΔΙΕΥΘΥΝΣΗ</td>
+    <td>ΤΚ</td>
+    <td>ΑΠΠΟΡΙΨΗ</td>
+    <td>ΑΠΟΔΟΧΗ</td>
+    </tr>
+
+    </table>
+    <table border=1 id="mytable2" >
+    <tr>
+    <td>ΟΝΟΜΑΤΕΠΩΝΥΜΟ</td>
+    <td>ΔΙΕΥΘΥΝΣΗ</td>
+    <td>ΤΚ</td>
+    <td>ΑΠΠΟΡΙΨΗ</td>
+    <td>ΑΠΟΔΟΧΗ</td>
+    </tr>
+
+    </table>
+
+
+  </div>
+
+
+
+
+  <div id="master_user">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button id="buttonn" onclick="logout()">Logout</button>
+    <button id="buttonn" onclick="registerUser()">register user</button>
+
+	<h1 id="yourH1_element_Id" > </h1>
+
+
+	<table border=1 id="mytable1" >
+	<tr>
+	<td>ΟΝΟΜΑΤΕΠΩΝΥΜΟ</td>
+  <td>ΞΕΝΕΣ ΥΛΕΣ</td>
+	<td>ΑΚΑΙΡΕΟΙ ΚΑΡΠΟΙ</td>
+  <td>ΠΟΙΤΙΚΑ</td>
+	<td>BRIX</td>
+	</tr>
+
+	</table>
+
+  </div>
+
+
+  <div id="register_user"  class="main-div">
+
+    <h3>register user</h3>
+    <input type="text" id="full_name" placeholder="ΟΝΟΜΑΤΕΠΩΝΥΜΟ">
+
+    <input type="text" id="code_para" placeholder="ΚΩΔΙΚΟΣ ΠΑΡΑΓΩΓΟΥ">
+
+    <input type="email" id="email" placeholder="Email">
+
+    <input type="password" id="password" placeholder="New Password">
+
+
+    <button type="button" class="btn btn-danger" onclick="register()">register</button>
+    <br>
+
+    <button class="btn btn-danger" onclick="back()">back</button>
+
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+
+
+
+
+
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAmTemGM99GTQNt-7gCOByMspP5ZBIXieA",
+      authDomain: "juice-lab-bf1d2.firebaseapp.com",
+      databaseURL: "https://juice-lab-bf1d2-default-rtdb.firebaseio.com",
+      projectId: "juice-lab-bf1d2",
+      storageBucket: "juice-lab-bf1d2.appspot.com",
+      messagingSenderId: "860806031323",
+      appId: "1:860806031323:web:de73f4148a04756cdbe9fe",
+      measurementId: "G-Q950R9F1M0"
+		};
+		firebase.initializeApp(config);
+
+    const auth = firebase.auth()
+const database = firebase.database()
+
+
+  </script>
+  <script src="index.js"></script>
+
+</body>
 </html>
