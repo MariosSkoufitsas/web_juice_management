@@ -125,7 +125,7 @@ function accept(r){
 });
 
 }
-
+var tra=0;
 function provoli(r){
     var i = r.parentNode.parentNode.rowIndex;
     var r=i;
@@ -135,8 +135,15 @@ function provoli(r){
       let poso = Child.val().poso;
       let posothta = Child.val().posothta;
 
-      var myWindow = window.open("", "MsgWindow", "width=200,height=100");
-      myWindow.document.write(onoma+poso+posothta);
+      var myWindow = window.open("", "MsgWindow", "width=1500,height=400");
+      if(tra==0){
+        tra=tra+1;
+          myWindow.document.write('<html><head><title>Print it!</title><link rel="stylesheet" type="text/css" href="index.css"><table><tr><td>+onoma</td><td>poso</td><td>posothta</td></tr></table></head><body>');
+      }
+
+
+      myWindow.document.write('<html><head><title>Print it!</title><link rel="stylesheet" type="text/css" href="index.css"><table><tr><td>'+onoma+"</td>"+"<td>"+poso+"</td>"+"<td>"+posothta+'</td></tr></table></head><body>');
+      myWindow.document.write();
       console.log("epppppppp "+onoma+poso+posothta);
 
 
